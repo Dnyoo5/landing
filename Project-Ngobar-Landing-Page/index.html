@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing | Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="sec">
+        <header>
+            <a href="#" class="logo">TEKNO<span>RIVA</span></a>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Service</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+
+        <div class="content">
+            <div class="textBox">
+                <h2>That's What <br><span id="dynamicText">I Like</span></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit nisi numquam enim modi quis sunt aliquid accusamus quisquam ipsa suscipit nostrum officiis illo exercitationem, placeat aspernatur molestias unde est accusantium?</p>
+                <a href="#">View All Product</a>
+            </div>
+            <div class="imgBox">
+                <img src="img/4.png" class="henset-1">
+            </div>
+        </div>
+        <ul class="thumb">
+            <li><img src="img/4.png" onclick="imgSilinder('img/4.png');changeBackground('#2E073F', 'I Like')"></li>
+            <li><img src="img/3.png" onclick="imgSilinder('img/3.png');changeBackground('#01081a', 'We Love')"></li>
+        </ul>
+        <ul class="sosial-media">
+            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+        </ul>
+    </section>
+
+    <script type="text/javascript">
+        function imgSilinder(anything) {
+            document.querySelector('.henset-1').src = anything;
+        }
+
+        function changeBackground(color, text) {
+            const sec = document.querySelector('.sec');
+            sec.style.background = color;
+            document.getElementById('dynamicText').innerText = text;
+        }
+
+        // Toggle Hamburger Menu
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
